@@ -42,12 +42,22 @@ export default class CustomDocument extends Document {
       <Html lang='en'>
         <Head>
           <meta name='description' content='Joao Vianas personal blog' />
-          <link rel='shortcut icon' href='/static/icons/favicon.ico' />
-          <link rel='apple-touch-icon' href='/static/icons/192x192.png' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap'
-            rel='stylesheet'
+            rel='apple-touch-icon'
+            sizes='180x180'
+            href='/icons/apple-touch-icon.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='32x32'
+            href='/icons/favicon-32x32.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='/icons/favicon-16x16.png'
           />
         </Head>
         <body>
