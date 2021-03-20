@@ -9,11 +9,44 @@ import {
   Image,
   List,
   ListItem,
+  Tag,
+  TagLeftIcon,
+  TagLabel,
   Text,
 } from '@chakra-ui/react';
 import styled from 'styled-components/macro';
 import { FC } from 'react';
 import { Download, GitHub, Linkedin, Mail } from 'react-feather';
+import { GrGraphQl, GrReactjs } from 'react-icons/gr';
+import { SiTypescript, SiStorybook, SiNextDotJs } from 'react-icons/si';
+import { PlaywrightIcon } from 'components/playwright';
+
+const skills = [
+  {
+    label: 'ReactJS',
+    icon: GrReactjs,
+  },
+  {
+    label: 'TypeScript',
+    icon: SiTypescript,
+  },
+  {
+    label: 'GraphQL',
+    icon: GrGraphQl,
+  },
+  {
+    label: 'NextJS',
+    icon: SiNextDotJs,
+  },
+  {
+    label: 'Storybook',
+    icon: SiStorybook,
+  },
+  {
+    label: 'Playwright',
+    icon: PlaywrightIcon,
+  },
+];
 
 const AnimatedText = styled(Text)`
   color: #83cdff;
@@ -39,7 +72,14 @@ const IndexPage: FC = () => (
       <AnimatedText>Software Engineer </AnimatedText> based in London
     </Heading>
     <Flex mb={10}>
-      <Button leftIcon={<Icon as={Mail} />} mr={4} colorScheme='pink'>
+      <Button
+        as='a'
+        href='mailto:joaopadraoviana@gmail.com'
+        target='_blank'
+        leftIcon={<Icon as={Mail} />}
+        mr={4}
+        colorScheme='pink'
+      >
         Say Hi
       </Button>
       <Button leftIcon={<Icon as={Download} />} colorScheme='green'>
@@ -48,6 +88,8 @@ const IndexPage: FC = () => (
     </Flex>
     <Flex mb={10}>
       <IconButton
+        as='a'
+        href='https://github.com/Joaoviana'
         variant='outline'
         aria-label='Github icon button'
         icon={<Icon as={GitHub} fill='white' />}
@@ -55,6 +97,8 @@ const IndexPage: FC = () => (
         mr={2}
       />
       <IconButton
+        as='a'
+        href='https://www.linkedin.com/in/joaopadraoviana'
         variant='outline'
         aria-label='Linkedin icon button'
         icon={<Icon as={Linkedin} fill='white' />}
@@ -82,22 +126,23 @@ const IndexPage: FC = () => (
         </Box>
       </Flex>
     </Box>
-    <Box mb={10}>
+    <Box mb={12}>
       <Heading as='h3' mb={4}>
         Working with
       </Heading>
-      <Grid templateColumns='repeat(3, 1fr)' gap={4}>
-        {[
-          'ReactJS',
-          'TypeScript',
-          'GraphQL',
-          'NextJS',
-          'Storybook',
-          'Playwright',
-        ].map((skill) => (
-          <Button key={skill} color='white' size='sm'>
-            {skill}
-          </Button>
+      <Grid templateColumns='repeat(4, 1fr)' gap={3}>
+        {skills.map(({ label, icon }) => (
+          <Tag
+            size='16px'
+            key={label}
+            variant='outline'
+            colorScheme='gray'
+            p={2}
+            borderRadius='3px'
+          >
+            <TagLeftIcon boxSize='16px' as={icon} />
+            <TagLabel>{label}</TagLabel>
+          </Tag>
         ))}
       </Grid>
     </Box>
@@ -106,24 +151,24 @@ const IndexPage: FC = () => (
         About Me
       </Heading>
 
-      <Text fontWeight={600} mb={1}>
+      <Text fontWeight={600} fontSize='2xl' mb={1}>
         ❤️ Passionate about
       </Text>
-      <List spacing={1} ml={6} fontSize='sm' mb={4}>
+      <List spacing={1} ml={7} fontSize='xl' mb={6}>
         <ListItem>Rubber-ducking with devs and designers.</ListItem>
         <ListItem>Sharing &lt;-&gt; Learning</ListItem>
       </List>
-      <Text fontWeight={600} mb={1}>
+      <Text fontWeight={600} fontSize='2xl' mb={1}>
         🧐 Active on
       </Text>
-      <List spacing={1} ml={6} fontSize='sm' mb={4}>
+      <List spacing={1} ml={7} fontSize='xl' mb={6}>
         <ListItem>Helping others get into Tech</ListItem>
         <ListItem>A11y standards</ListItem>
       </List>
-      <Text fontWeight={600} mb={2}>
+      <Text fontWeight={600} fontSize='2xl' mb={2}>
         🌱 Getting good at
       </Text>
-      <List spacing={1} ml={6} fontSize='sm' mb={4}>
+      <List spacing={1} ml={7} fontSize='xl' mb={6}>
         <ListItem>E2E Automation Testing</ListItem>
         <ListItem>More DevOps-y stuff</ListItem>
       </List>
