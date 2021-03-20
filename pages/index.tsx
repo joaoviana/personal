@@ -130,7 +130,7 @@ const IndexPage: FC = () => (
       <Heading as='h3' mb={4}>
         Working with
       </Heading>
-      <Grid templateColumns='repeat(4, 1fr)' gap={3}>
+      <Grid templateColumns='repeat(3, 1fr)' gap={3}>
         {skills.map(({ label, icon }) => (
           <Tag
             size='16px'
