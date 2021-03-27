@@ -130,45 +130,45 @@ const IndexPage: FC = () => (
       <Heading as='h3' mb={4}>
         Working with
       </Heading>
-      <Grid templateColumns='repeat(3, 1fr)' gap={3}>
-        {skills.map(({ label, icon }) => (
+      <Grid w={['90vw', '50vw']} templateColumns='repeat(2, 1fr)' gap={3}>
+        {skills.map(({ label, icon }, idx) => (
           <Tag
-            size='16px'
-            key={label}
-            variant='outline'
+            // eslint-disable-next-line react/no-array-index-key
+            key={idx}
+            size='12px'
             colorScheme='gray'
             p={2}
             borderRadius='3px'
           >
             <TagLeftIcon boxSize='16px' as={icon} />
-            <TagLabel>{label}</TagLabel>
+            <TagLabel color='white'>{label}</TagLabel>
           </Tag>
         ))}
       </Grid>
     </Box>
     <Box>
-      <Heading as='h3' mb={4}>
+      <Heading as='h3' mb={5}>
         About Me
       </Heading>
 
       <Text fontWeight={600} fontSize='2xl' mb={1}>
         ❤️ Passionate about
       </Text>
-      <List spacing={1} ml={7} fontSize='xl' mb={6}>
+      <List spacing={1} ml={7} fontSize='lg' mb={6}>
         <ListItem>Rubber-ducking with devs and designers.</ListItem>
         <ListItem>Sharing &lt;-&gt; Learning</ListItem>
       </List>
       <Text fontWeight={600} fontSize='2xl' mb={1}>
         🧐 Active on
       </Text>
-      <List spacing={1} ml={7} fontSize='xl' mb={6}>
+      <List spacing={1} ml={7} fontSize='lg' mb={6}>
         <ListItem>Helping others get into Tech</ListItem>
         <ListItem>A11y standards</ListItem>
       </List>
       <Text fontWeight={600} fontSize='2xl' mb={2}>
         🌱 Getting good at
       </Text>
-      <List spacing={1} ml={7} fontSize='xl' mb={6}>
+      <List spacing={1} ml={7} fontSize='lg' mb={6}>
         <ListItem>E2E Automation Testing</ListItem>
         <ListItem>More DevOps-y stuff</ListItem>
       </List>
