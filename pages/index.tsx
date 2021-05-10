@@ -82,7 +82,13 @@ const IndexPage: FC = () => (
       >
         Say Hi
       </Button>
-      <Button leftIcon={<Icon as={Download} />} colorScheme='green'>
+      <Button
+        leftIcon={<Icon as={Download} />}
+        colorScheme='green'
+        as='a'
+        href='https://pdfhost.io/pdf/a25a2efc-854d-4b4d-88d1-53610eac782f/50697a22-fe98-441f-8cb7-36c227993884.pdf'
+        target='_blank'
+      >
         CV
       </Button>
     </Flex>
