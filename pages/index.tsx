@@ -17,6 +17,7 @@ import {
   TagLeftIcon,
   TagLabel,
   Text,
+  Link,
 } from '@chakra-ui/react';
 import styled from 'styled-components/macro';
 import { FC } from 'react';
@@ -96,10 +97,14 @@ const IndexPage: FC = () => (
           CV
         </MenuButton>
         <MenuList>
-          <MenuItem>Download</MenuItem>
+          <MenuItem>
+            <Link href='https://github.com/Joaoviana/musical-garbanzo/raw/main/public/assets/joao-viana-cv.pdf'>
+              Download
+            </Link>
+          </MenuItem>
           <MenuItem
             as='a'
-            href='https://pdfhost.io/pdf/a25a2efc-854d-4b4d-88d1-53610eac782f/50697a22-fe98-441f-8cb7-36c227993884.pdf'
+            href='https://github.com/Joaoviana/musical-garbanzo/blob/main/public/assets/joao-viana-cv.pdf'
             target='_blank'
           >
             Go to link
