@@ -9,6 +9,10 @@ import {
   Image,
   List,
   ListItem,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Tag,
   TagLeftIcon,
   TagLabel,
@@ -16,7 +20,7 @@ import {
 } from '@chakra-ui/react';
 import styled from 'styled-components/macro';
 import { FC } from 'react';
-import { Download, GitHub, Linkedin, Mail } from 'react-feather';
+import { ChevronDown, Download, GitHub, Linkedin, Mail } from 'react-feather';
 import { GrGraphQl, GrReactjs } from 'react-icons/gr';
 import { SiTypescript, SiStorybook, SiNextDotJs } from 'react-icons/si';
 import { PlaywrightIcon } from 'components/playwright';
@@ -82,15 +86,26 @@ const IndexPage: FC = () => (
       >
         Say Hi
       </Button>
-      <Button
-        leftIcon={<Icon as={Download} />}
-        colorScheme='green'
-        as='a'
-        href='https://pdfhost.io/pdf/a25a2efc-854d-4b4d-88d1-53610eac782f/50697a22-fe98-441f-8cb7-36c227993884.pdf'
-        target='_blank'
-      >
-        CV
-      </Button>
+      <Menu>
+        <MenuButton
+          leftIcon={<Icon as={Download} />}
+          colorScheme='green'
+          as={Button}
+          rightIcon={<ChevronDown />}
+        >
+          CV
+        </MenuButton>
+        <MenuList>
+          <MenuItem>Download</MenuItem>
+          <MenuItem
+            as='a'
+            href='https://pdfhost.io/pdf/a25a2efc-854d-4b4d-88d1-53610eac782f/50697a22-fe98-441f-8cb7-36c227993884.pdf'
+            target='_blank'
+          >
+            Go to link
+          </MenuItem>
+        </MenuList>
+      </Menu>
     </Flex>
     <Flex mb={10}>
       <IconButton
@@ -139,8 +154,7 @@ const IndexPage: FC = () => (
       <Grid w={['90vw', '50vw']} templateColumns='repeat(2, 1fr)' gap={3}>
         {skills.map(({ label, icon }, idx) => (
           <Tag
-            // eslint-disable-next-line react/no-array-index-key
-            key={idx}
+            key={label}
             size='12px'
             colorScheme='gray'
             p={2}
