@@ -7,12 +7,10 @@ module.exports = {
     node: true,
   },
   extends: [
-    'airbnb',
     'airbnb-base',
-    'airbnb/hooks',
     'prettier',
-    "eslint:recommended",
-    "plugin:react/recommended"
+    'eslint:recommended',
+    'plugin:react/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -22,14 +20,10 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'unicorn'
-  ],
+  plugins: ['react', '@typescript-eslint', 'unicorn'],
   settings: {
     react: {
-      "version": "detect",
+      version: 'detect',
     },
     'import/resolver': {
       node: {},
