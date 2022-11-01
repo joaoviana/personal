@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { ChevronDown, Download, Mail } from 'react-feather';
-import NextLink from 'next/link';
 import { AnimatedText } from 'components/animated-text';
 import { AboutMe } from 'components/about-me';
 import { Skills } from 'components/skills';
@@ -63,20 +62,17 @@ const IndexPage: FC = () => (
         </MenuList>
       </Menu>
     </Flex>
-    <Flex bgColor='red' justifyContent='center' m={4}>
-      <NextLink href='/blog'>Blog (coming soon)</NextLink>
-    </Flex>
     <Flex mb={10}>
       <Socials />
     </Flex>
     <Box mb={10}>
       <Work />
     </Box>
-    <Box mb={12}>
-      <Skills />
-    </Box>
     <Box>
       <AboutMe />
+    </Box>
+    <Box mb={12}>
+      <Skills />
     </Box>
   </Box>
 );
