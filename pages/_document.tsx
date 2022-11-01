@@ -9,6 +9,8 @@ import { ColorModeScript } from '@chakra-ui/react';
 import { ServerStyleSheet } from 'styled-components';
 import { theme } from '../theme';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export default class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -46,6 +48,7 @@ export default class CustomDocument extends Document {
           <title>João Viana</title>
         </Head>
         <body>
+          {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */}
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
